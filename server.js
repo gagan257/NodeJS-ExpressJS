@@ -1,6 +1,8 @@
 const express = require('express')//added express
 const app = express()//used express in app var
 
+app.use(express.urlencoded({extended: true}))//for reading body data in POST req
+
 app.get('/',(req,res)=>{//for server link general(simple localhost:portnum)
     res.send('<h1 style="color: red;">Hello World</h1>')
 })
@@ -21,6 +23,18 @@ app.get('/greet',(req,res)=>{
     res.send('Good Morning ' + person)
     // example: http://localhost:4444/greet?person=gagan = good morning gagan
     // example: http://localhost:4444/greet = good morning
+})
+
+app.get('/form2',(req,res)=>{
+    console.log(__dirname)
+    res.sendFile('files/form2.html', {root: __dirname})
+})
+
+app.post('/greet',(req,res)=>{
+    let person = 'Guest'
+    console.log(req.body)//see content in body
+    if(req.body.person) person = req.body.person//in general req it does not exists
+    res.send('Good Evening ' + person)
 })
 
 app.listen(4444,()=>{
