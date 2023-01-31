@@ -37,6 +37,10 @@ app.post('/greet',(req,res)=>{
     res.send('Good Evening ' + person)
 })
 
+app.get('/:city/welcome', (req,res)=>{//:city(can be multiple) is a var takes what user puts and uses it with req.params.city
+    res.send('welcome to ' +req.params.city+ ' !')
+})
+
 app.listen(4444,()=>{
     console.log('server started on http://localhost:4444')
 })
