@@ -12,7 +12,7 @@ app.use('/public', express.static(__dirname + '/public'))
 //linking whole folder with path can access file with further '/' breakdown
 
 app.listen(4321,()=>{
-    console.log('server started')
+    console.log('server started at http://localhost:4321/')
 })
 
 // const express = require('express')

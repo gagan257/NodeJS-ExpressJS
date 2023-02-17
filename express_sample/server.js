@@ -4,7 +4,7 @@ const todoRoute = require('./routes/todos')
 
 srv.use(express.json())
 srv.use(express.urlencoded({extended:true}))
-// for post req enable
+// for post req
 
 srv.get('/hello',function(req,res){
     res.send('hello')

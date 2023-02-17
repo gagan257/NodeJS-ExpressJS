@@ -29,5 +29,5 @@ app.post('/',(req,res)=>{
 })
 
 app.listen(5555,()=>{
-    console.log('started')
+    console.log('server started at http://localhost:5555/')
 })
